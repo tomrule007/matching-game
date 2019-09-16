@@ -1,3 +1,15 @@
+# Matching Game
+
+A browser-based card matching game that presents the player with cards arranged in a 4x4 grid
+
+The objective of the Matching Game is for the player to turn over pairs of matching cards across eight successive turns. In a turn if the player selects two cards whose symbols match those cards, along with those successfully matched in previous turns, will remain up. However, if the player chooses two cards with different symbols they will both be flipped over, obscuring their symbols.
+
+by Thomas Herzog.
+
+(Description from [Chingu Voyage Pre-work Project - Tier 2](https://github.com/chingu-voyages/voyage-prework-tier2-matching-game))
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
