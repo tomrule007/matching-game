@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FlipCard from './components/FlipCard';
 import './App.css';
 
 function App() {
@@ -26,187 +27,24 @@ function App() {
           </button>
         </div>
       </div>
+
       <div className="card-grid">
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">
-              <div className="back-symbol">
-                <img src="./assets/angular-seeklogo.com.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <img
-                alt="JS logo"
-                src="./assets/javascript-js-seeklogo.com.svg"
-              />
-            </div>
-            <div className="flip-card-back">back</div>
-          </div>
-        </div>
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
+        <FlipCard />
       </div>
     </div>
   );
