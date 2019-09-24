@@ -10,31 +10,32 @@ import symbol7 from './assets/redux-seeklogo.com.svg';
 import symbol8 from './assets/vuejs-seeklogo.com.svg';
 
 import './App.css';
+const symbols = [
+  { alt: 'symbol1', src: symbol1, show: false },
+  { alt: 'symbol2', src: symbol2, show: false },
+  { alt: 'symbol3', src: symbol3, show: false },
+  { alt: 'symbol4', src: symbol4, show: false },
+  { alt: 'symbol5', src: symbol5, show: false },
+  { alt: 'symbol6', src: symbol6, show: false },
+  { alt: 'symbol7', src: symbol7, show: false },
+  { alt: 'symbol8', src: symbol8, show: false }
+];
+
+// utility functions
+const doubledSymbols = symbols.reduce((acc, cur) => [...acc, cur, cur], []);
+const getRandomIndex = ({ length }) => Math.floor(Math.random() * (length - 1));
+const spliceRandom = array => array.splice(getRandomIndex(array), 1);
 
 function App() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    const symbols = [
-      symbol1,
-      symbol2,
-      symbol3,
-      symbol4,
-      symbol5,
-      symbol6,
-      symbol7,
-      symbol8,
-      symbol1,
-      symbol2,
-      symbol3,
-      symbol4,
-      symbol5,
-      symbol6,
-      symbol7,
-      symbol8
-    ];
-    console.log('app mounted');
-    setCards(symbols);
+    const orderedSymbols = [...doubledSymbols];
+    let randomizedSymbols = [];
+    for (let i = 15; i >= 0; i--) {
+      randomizedSymbols.push(...spliceRandom(orderedSymbols));
+    }
+    setCards(randomizedSymbols);
   }, []);
   console.log(cards);
   return (
@@ -67,7 +68,14 @@ function App() {
 
       <div className="card-grid">
         {cards.map((symbol, index) => (
-          <FlipCard backSymbol={{ alt: 'alt', src: symbol }} key={index} />
+          <FlipCard
+            clickHandler={cardClickHandler}
+            show={symbol.show}
+            alt={symbol.alt}
+            src={symbol.src}
+            index={index}
+            key={index}
+          />
         ))}
       </div>
     </div>
