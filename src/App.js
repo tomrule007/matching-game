@@ -28,6 +28,8 @@ const spliceRandom = array => array.splice(getRandomIndex(array), 1);
 
 function App() {
   const [cards, setCards] = useState([]);
+  const [previousCardAlt, setPreviousCardAlt] = useState(null);
+  const [pairCount, setPairCount] = useState(0);
 
   useEffect(() => {
     const orderedSymbols = [...doubledSymbols];
@@ -37,7 +39,34 @@ function App() {
     }
     setCards(randomizedSymbols);
   }, []);
-  console.log(cards);
+
+  const cardClickHandler = index => {
+    const clickedCard = cards[index];
+    let updatedCardsState = [...cards];
+
+    if (previousCardAlt && previousCardAlt === clickedCard.alt) {
+      //previous and current match
+      //if previous is clicked see if it equals current click
+      console.log('pairCount: ' + (pairCount + 1));
+      setPairCount(pairCount + 1);
+    }
+    if (previousCardAlt && !(previousCardAlt === clickedCard.alt)) {
+      console.log('start over');
+      setPairCount(0);
+      updatedCardsState = updatedCardsState.map(card => ({
+        ...card,
+        show: false
+      }));
+    }
+
+    setPreviousCardAlt(
+      previousCardAlt === clickedCard.alt ? null : clickedCard.alt
+    );
+
+    //always show last clicked
+    updatedCardsState[index] = { ...clickedCard, show: true };
+    setCards(updatedCardsState);
+  };
   return (
     <div className="app">
       <div className="win-display hidden">
