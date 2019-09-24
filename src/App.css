@@ -1,33 +1,108 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  backface-visibility: hidden;
+}
+
+.app {
+  padding: 1em;
+  max-width: 600px;
+  margin: auto;
+}
+.win-display {
+  border-radius: 1em;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  z-index: 100;
+}
+.hidden {
+  visibility: hidden;
+}
+.title {
+  text-align: center;
+  color: black;
+  margin: 0.5em;
+}
+h1 {
+  font-size: 3rem;
+}
+
+.stats-controls {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.stats__item,
+.stats,
+.reset {
+  display: inline-block;
+  margin: 0.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.card-grid {
+  border-radius: 1em;
+  background-image: linear-gradient(to bottom right, red, yellow, red);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  padding: 1em;
+  grid-gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.App-link {
-  color: #61dafb;
+/* w3schools flip card css */
+
+.flip-card {
+  background-color: transparent;
+  perspective: 1000px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flip-card-inner {
+  position: relative;
+  padding-bottom: 100%;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip Activator */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Back side starts flipped */
+.flip-card-back {
+  background-color: white;
+  transform: rotateY(180deg);
 }
