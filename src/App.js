@@ -23,8 +23,15 @@ const symbols = [
 
 // utility functions
 const doubledSymbols = symbols.reduce((acc, cur) => [...acc, cur, cur], []);
-const getRandomIndex = ({ length }) => Math.floor(Math.random() * (length - 1));
-const spliceRandom = array => array.splice(getRandomIndex(array), 1);
+// random array utility function
+const getRandomizedArray = items => {
+  const getRandomIndex = ({ length }) =>
+    Math.floor(Math.random() * (length - 1));
+  const spliceRandom = array => array.splice(getRandomIndex(array), 1);
+
+  const availableItems = [...items];
+  return items.map(() => spliceRandom(availableItems)[0]);
+};
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -32,12 +39,7 @@ function App() {
   const [pairCount, setPairCount] = useState(0);
 
   useEffect(() => {
-    const orderedSymbols = [...doubledSymbols];
-    let randomizedSymbols = [];
-    for (let i = 15; i >= 0; i--) {
-      randomizedSymbols.push(...spliceRandom(orderedSymbols));
-    }
-    setCards(randomizedSymbols);
+    setCards(getRandomizedArray(doubledSymbols));
   }, []);
 
   const cardClickHandler = index => {
