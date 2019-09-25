@@ -91,9 +91,8 @@ function App() {
         </div>
 
         <div className="reset">
-          <label htmlFor="btn-reset">⟳</label>
           <button id="btn-reset" onClick={resetClickHandler}>
-            reset
+            ⟳ reset
           </button>
         </div>
       </div>
