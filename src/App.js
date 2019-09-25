@@ -10,6 +10,7 @@ import symbol7 from './assets/redux-seeklogo.com.svg';
 import symbol8 from './assets/vuejs-seeklogo.com.svg';
 
 import './App.css';
+
 const symbols = [
   { alt: 'symbol1', src: symbol1, show: false },
   { alt: 'symbol2', src: symbol2, show: false },
@@ -20,8 +21,6 @@ const symbols = [
   { alt: 'symbol7', src: symbol7, show: false },
   { alt: 'symbol8', src: symbol8, show: false }
 ];
-
-// utility functions
 const doubledSymbols = symbols.reduce((acc, cur) => [...acc, cur, cur], []);
 // random array utility function
 const getRandomizedArray = items => {
@@ -41,7 +40,10 @@ function App() {
   useEffect(() => {
     setCards(getRandomizedArray(doubledSymbols));
   }, []);
-
+  const resetClickHandler = () => {
+    // needs refactoring but works for now
+    window.location.reload();
+  };
   const cardClickHandler = index => {
     const clickedCard = cards[index];
     let updatedCardsState = [...cards];
@@ -81,7 +83,6 @@ function App() {
       <div className="title">
         <h1>Matching Game</h1>
       </div>
-
       <div className="stats-controls">
         <div className="stats">
           <div className="stats__item star-rating">☆☆★</div>
@@ -90,13 +91,12 @@ function App() {
         </div>
 
         <div className="reset">
-          <label for="btn-reset">⟳</label>
-          <button id="btn-reset" onclick="window.location.reload()">
+          <label htmlFor="btn-reset">⟳</label>
+          <button id="btn-reset" onClick={resetClickHandler}>
             reset
           </button>
         </div>
       </div>
-
       <div className="card-grid">
         {cards.map((symbol, index) => (
           <FlipCard
