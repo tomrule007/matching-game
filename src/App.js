@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     setCards(getRandomizedArray(doubledSymbols));
   }, []);
-  const resetClickHandler = () => {
+  const newGameClickHandler = () => {
     // needs refactoring but works for now
     window.location.reload();
   };
@@ -86,10 +86,8 @@ function App() {
         <h1>Matching Game</h1>
       </div>
       <div className="stats-controls">
-        <div className="reset">
-          <button id="btn-reset" onClick={resetClickHandler}>
-            ⟳ reset
-          </button>
+        <div className="controls">
+          <button onClick={newGameClickHandler}>New Game</button>
         </div>
       </div>
       <div className="card-grid">
