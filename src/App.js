@@ -49,13 +49,9 @@ function App() {
     let updatedCardsState = [...cards];
 
     if (previousCardAlt && previousCardAlt === clickedCard.alt) {
-      //previous and current match
-      //if previous is clicked see if it equals current click
-      console.log('pairCount: ' + (pairCount + 1));
       setPairCount(pairCount + 1);
     }
     if (previousCardAlt && !(previousCardAlt === clickedCard.alt)) {
-      console.log('start over');
       setPairCount(0);
       updatedCardsState = updatedCardsState.map(card => ({
         ...card,
@@ -67,7 +63,7 @@ function App() {
       previousCardAlt === clickedCard.alt ? null : clickedCard.alt
     );
 
-    //always show last clicked
+    // always show last clicked
     updatedCardsState[index] = { ...clickedCard, show: true };
     setCards(updatedCardsState);
   };
