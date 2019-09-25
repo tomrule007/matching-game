@@ -9,7 +9,7 @@ const FlipCard = ({ clickHandler, show, alt, src, index }) => {
     >
       <div className="flip-card-inner">
         <div className="flip-card-front">
-          <img alt="JS logo" src={jsLogo} />
+          <img alt="" src={jsLogo} />
         </div>
         <div className="flip-card-back">
           <img alt={alt} src={src} />
