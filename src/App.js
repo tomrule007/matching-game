@@ -73,12 +73,14 @@ function App() {
   };
   return (
     <div className="app">
-      <div className="win-display hidden">
-        <h1>
-          Congrats! <br />
-          You Won :)
-        </h1>
-      </div>
+      {pairCount === 8 ? (
+        <div className="win-display">
+          <h1>
+            Congrats! <br />
+            You Won :)
+          </h1>
+        </div>
+      ) : null}
 
       <div className="title">
         <h1>Matching Game</h1>

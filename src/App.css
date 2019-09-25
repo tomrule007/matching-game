@@ -33,9 +33,6 @@ img {
   background-color: green;
   z-index: 100;
 }
-.hidden {
-  visibility: hidden;
-}
 .title {
   text-align: center;
   color: black;
