@@ -84,12 +84,6 @@ function App() {
         <h1>Matching Game</h1>
       </div>
       <div className="stats-controls">
-        <div className="stats">
-          <div className="stats__item star-rating">☆☆★</div>
-          <div className="stats__item game-timer">01:21</div>
-          <div className="stats__item moves">0 Moves</div>
-        </div>
-
         <div className="reset">
           <button id="btn-reset" onClick={resetClickHandler}>
             ⟳ reset
