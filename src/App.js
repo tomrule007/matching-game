@@ -89,14 +89,13 @@ function App() {
         </div>
       </div>
       <div className="card-grid">
-        {cards.map((symbol, index) => (
+        {cards.map(({ alt, src, show }, index) => (
           <FlipCard
-            clickHandler={cardClickHandler}
-            flip={symbol.show}
-            index={index}
+            clickHandler={() => cardClickHandler(index)}
+            flip={show}
             key={index}
             front={<img alt="" src={frontSymbol} />}
-            back={<img alt={symbol.alt} src={symbol.src} />}
+            back={<img alt={alt} src={src} />}
           />
         ))}
       </div>
