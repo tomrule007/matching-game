@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FlipCard from './components/FlipCard';
+import frontSymbol from './assets/javascript-js-seeklogo.com.svg';
 import symbol1 from './assets/angular-seeklogo.com.svg';
 import symbol2 from './assets/gatsby-seeklogo.com.svg';
 import symbol3 from './assets/jest-seeklogo.com.svg';
@@ -91,10 +92,10 @@ function App() {
           <FlipCard
             clickHandler={cardClickHandler}
             show={symbol.show}
-            alt={symbol.alt}
-            src={symbol.src}
             index={index}
             key={index}
+            front={<img alt="" src={frontSymbol} />}
+            back={<img alt={symbol.alt} src={symbol.src} />}
           />
         ))}
       </div>

@@ -1,20 +1,15 @@
 import React from 'react';
-import jsLogo from '../assets/javascript-js-seeklogo.com.svg';
 import './FlipCard.css';
 
-const FlipCard = ({ clickHandler, show, alt, src, index }) => {
+const FlipCard = ({ clickHandler, show, index, front, back }) => {
   return (
     <div
       className={'flip-card' + (show ? ' flip' : '')}
       onClick={() => !show && clickHandler(index)}
     >
       <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <img alt="" src={jsLogo} />
-        </div>
-        <div className="flip-card-back">
-          <img alt={alt} src={src} />
-        </div>
+        <div className="flip-card-front">{front}</div>
+        <div className="flip-card-back">{back}</div>
       </div>
     </div>
   );
