@@ -1,5 +1,6 @@
 import React from 'react';
 import jsLogo from '../assets/javascript-js-seeklogo.com.svg';
+import './FlipCard.css';
 
 const FlipCard = ({ clickHandler, show, alt, src, index }) => {
   return (
