@@ -47,8 +47,9 @@ function App() {
   };
   const cardClickHandler = index => {
     const clickedCard = cards[index];
+    // disable clicks on already flipped cards
+    if (clickedCard.show) return null;
     let updatedCardsState = [...cards];
-
     if (previousCardAlt && previousCardAlt === clickedCard.alt) {
       setPairCount(pairCount + 1);
     }
