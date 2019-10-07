@@ -91,7 +91,7 @@ function App() {
         {cards.map((symbol, index) => (
           <FlipCard
             clickHandler={cardClickHandler}
-            show={symbol.show}
+            flip={symbol.show}
             index={index}
             key={index}
             front={<img alt="" src={frontSymbol} />}
