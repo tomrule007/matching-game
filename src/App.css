@@ -87,7 +87,14 @@ h1 {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-  -moz-backface-visibility: hidden;
+  perspective: 0;
+  -webkit-perspective: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Style the front side (fallback if image is missing) */
