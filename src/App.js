@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TimerDisplay from './components/TimerDisplay';
 import FlipCard from './components/FlipCard';
 import frontSymbol from './assets/javascript-js-seeklogo.com.svg';
 import symbol1 from './assets/angular-seeklogo.com.svg';
@@ -90,6 +91,7 @@ function App() {
           <div className="moveCounter">
             <span>{`${stats.moveCount} Moves`}</span>
           </div>
+          <TimerDisplay />
         </div>
         <div className="controls">
           <button onClick={newGameClickHandler}>New Game</button>
