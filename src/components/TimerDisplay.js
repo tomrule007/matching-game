@@ -4,7 +4,6 @@ const TimerDisplay = () => {
   const [time, setTime] = useState({ seconds: 0, minutes: 0 });
   useEffect(() => {
     const ticker = setInterval(() => {
-      console.log('tick');
       const seconds = time.seconds + 1;
       setTime(
         seconds > 60
@@ -14,7 +13,11 @@ const TimerDisplay = () => {
     }, 1000);
     return () => clearInterval(ticker);
   });
-  return <div>{`${time.minutes}:${time.seconds}`}</div>;
+  return (
+    <div>{`${time.minutes}:${time.seconds < 10 ? '0' : ''}${
+      time.seconds
+    }`}</div>
+  );
 };
 
 export default TimerDisplay;
