@@ -35,6 +35,7 @@ const getRandomizedArray = items => {
 
 function App() {
   const [cards, setCards] = useState([]);
+  const [stats, setStats] = useState({ moveCount: 0 });
   const [previousCardAlt, setPreviousCardAlt] = useState(null);
   const [pairCount, setPairCount] = useState(0);
 
@@ -68,6 +69,7 @@ function App() {
     // always show last clicked
     updatedCardsState[index] = { ...clickedCard, show: true };
     setCards(updatedCardsState);
+    setStats({ ...stats, moveCount: stats.moveCount + 1 });
   };
   return (
     <div className="app">
@@ -84,6 +86,11 @@ function App() {
         <h1>Matching Game</h1>
       </div>
       <div className="stats-controls">
+        <div className="stats">
+          <div className="moveCounter">
+            <span>{`${stats.moveCount} Moves`}</span>
+          </div>
+        </div>
         <div className="controls">
           <button onClick={newGameClickHandler}>New Game</button>
         </div>
