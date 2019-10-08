@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 import './FlipCard.css';
 
 const FlipCard = ({ clickHandler, flip, front, back }) => {
@@ -6,7 +7,10 @@ const FlipCard = ({ clickHandler, flip, front, back }) => {
     <div className={'flip-card' + (flip ? ' flip' : '')} onClick={clickHandler}>
       <div className="flip-card-inner">
         <div className="flip-card-front">{front}</div>
-        <div className="flip-card-back">{back}</div>
+        {/* timeout duration equals half flip transition time */}
+        <CSSTransition in={flip} timeout={400} unmountOnExit>
+          <div className="flip-card-back">{back}</div>
+        </CSSTransition>
       </div>
     </div>
   );

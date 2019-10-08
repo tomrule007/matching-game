@@ -2,6 +2,7 @@
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .flip-card-inner {
