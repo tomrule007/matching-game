@@ -10,19 +10,41 @@ import symbol5 from './assets/npm-node-package-manager.svg';
 import symbol6 from './assets/react-seeklogo.com.svg';
 import symbol7 from './assets/redux-seeklogo.com.svg';
 import symbol8 from './assets/vuejs-seeklogo.com.svg';
-
 import './App.css';
 
-const symbols = [
-  { alt: 'symbol1', src: symbol1, show: false },
-  { alt: 'symbol2', src: symbol2, show: false },
-  { alt: 'symbol3', src: symbol3, show: false },
-  { alt: 'symbol4', src: symbol4, show: false },
-  { alt: 'symbol5', src: symbol5, show: false },
-  { alt: 'symbol6', src: symbol6, show: false },
-  { alt: 'symbol7', src: symbol7, show: false },
-  { alt: 'symbol8', src: symbol8, show: false }
-];
+//Import price folder
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const price = importAll(
+  require.context('./assets/price', false, /\.(png|jpe?g|svg)$/)
+);
+
+const symbols =
+  window.location.pathname === '/price'
+    ? [
+        { alt: 'symbol1', src: price[0], show: false },
+        { alt: 'symbol2', src: price[1], show: false },
+        { alt: 'symbol3', src: price[2], show: false },
+        { alt: 'symbol4', src: price[3], show: false },
+        { alt: 'symbol5', src: price[4], show: false },
+        { alt: 'symbol6', src: price[5], show: false },
+        { alt: 'symbol7', src: price[6], show: false },
+        { alt: 'symbol8', src: price[7], show: false }
+      ]
+    : [
+        { alt: 'symbol1', src: symbol1, show: false },
+        { alt: 'symbol2', src: symbol2, show: false },
+        { alt: 'symbol3', src: symbol3, show: false },
+        { alt: 'symbol4', src: symbol4, show: false },
+        { alt: 'symbol5', src: symbol5, show: false },
+        { alt: 'symbol6', src: symbol6, show: false },
+        { alt: 'symbol7', src: symbol7, show: false },
+        { alt: 'symbol8', src: symbol8, show: false }
+      ];
+
 const doubledSymbols = symbols.reduce((acc, cur) => [...acc, cur, cur], []);
 // random array utility function
 const getRandomizedArray = items => {
